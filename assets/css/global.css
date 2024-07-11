@@ -12,19 +12,11 @@ body{
     padding: 1rem;
     background-color: #fff;
     height: 100vh;
+    width: 100vw;
 }
 
 .content h1{
     margin: 0;    
-}
-
-/* breakpoint - md */
-@media screen and (min-width: 992px){
-    .content{
-        max-width: 992px;
-        margin: 0 auto;
-        border-radius: 1rem;
-    }
 }
 
 .pokemons{
@@ -88,3 +80,33 @@ body{
     align-self: flex-end;
 }
 
+@media screen and (min-width: 380px){
+    .pokemons{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* breakpoint - sm */
+@media screen and (min-width: 576px){
+    .content{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .pokemons{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* breakpoint - md */
+@media screen and (min-width: 992px){
+    .content{
+        max-width: 992px;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 1rem;
+    }
+
+    .pokemons{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
