@@ -90,4 +90,50 @@ são metadados da requisição ou Ä configuração da API", sejam elas para rec
      - ex.: Authorization: Bearer seu_token_de_acesso
 
 - Cookie: Contém cookies enviados anteriormente pelo servidor.
-     - ex.: `Cookie: session_
+     - ex.: `Cookie: session_`
+
+# Body e Status
+
+## Request Body
+
+Em uma requisição HTTP, o Body (corpo) é onde enviamos informações adicionais para o servidor, como dados de um formulário, conteúdo de um arquivo ou um objeto JSON.
+
+ Pense nele como o "recheio" da sua mensagem. Ele é opcional em alguns métodos HTTP (como GET), mas essencial em outros (como POST e PUT).
+
+ ex.:
+
+ Imagine que você está preenchendo um formulário de cadastro em um site. As informações que você digita nos campos (nome, email, senha) são enviadas no Body da requisição para o servidor processar.
+
+ ```json
+ /*
+     Rquest Headers
+     content-type: application/json
+*/
+
+ Body
+ {
+     "name":"Test"
+ }
+ ```
+## Status Code
+
+O Status Code **(código de status)** é uma resposta numérica que o servidor envia de volta ao cliente após receber uma requisição. Ele indica se a requisição foi bem-sucedida, se houve algum erro ou se é necessária alguma ação adicional.
+
+### Categorias de Status Code
+- **1xx: Informações**:
+     - A requisição foi bem recebida e está sendo processado.
+
+- **2xx: Sucesso**:
+     - A requisição foi bem recebida e processada com sucesso.
+
+- **3xx: Redirecionamento**:
+     - O cliente precisa realizar uma ação adicional para completar a requisição.
+
+- **4xx: Erro do Cliente**:
+     - A requisição contém algum erro ou não pôde ser processada (normalmente por parte do cliente).
+
+- **5xx: Erro do Servidor**:
+     - O servidor encontrou um erro ao processar a requisição.
+
+
+
