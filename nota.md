@@ -47,6 +47,47 @@ Em toda requisição de um recurso o método informa o que será feito com esse 
      `offset = 4` -> deslocamento 4
      `limit: 2` -> retorna 2 pokemons entre 3 e 4
 
-     Ou seha chama-se paginação
+# Headers
 
+são metadados da requisição ou Ä configuração da API", sejam elas para receber ou completar uma requisição.
 
+- **Request Headers:** o cliente(Brower) é responsavel por essa configuração ao servidor;
+
+- **Response Headers:** o servidor é responsavel por essa configuração ao cliente.
+
+## Cabeçalhos Gerais
+
+- Accept: Especifica os tipos de mídia (por exemplo, text/html, application/json) que o cliente pode entender.
+     - ex.: `Accept: application/json`
+
+- Accept-Encoding: Indica a codificação de conteúdo (por exemplo, gzip, deflate) que o cliente pode lidar.
+     -ex.: `Accept-Encoding: gzip, deflate``
+
+- Accept-Language: Especifica o(s) idioma(s) preferencial(is) para a resposta.
+      - ex.: `Accept-Language: pt-BR,pt;q=0.9`
+
+- Cache-Control: Direciona o comportamento de cache (por exemplo, no-cache, max-age).
+      - ex.: `Cache-Control: no-cache`
+
+- Connection: Controla se a conexão de rede permanece aberta após a transação atual.
+     - ex.: `Connection: keep-alive`
+
+- Content-Length: Especifica o comprimento do corpo da solicitação em bytes.
+     - ex.: `Content-Length: 123`
+
+- Content-Type: Indica o tipo de mídia do corpo da solicitação.
+     - ex.: `Content-Type: application/json`
+
+- Host: Especifica o nome de domínio do servidor.
+     - ex.: `Host: www.exemplo.com`
+
+- User-Agent: Identifica o software cliente que faz a solicitação (por exemplo, navegador, bot).
+     - ex.: `User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36`
+
+## Cabeçalhos de Solicitação para Autorização e Autenticação
+
+- Authorization: Carrega credenciais para autenticação (por exemplo, autenticação básica, token Bearer).
+     - ex.: Authorization: Bearer seu_token_de_acesso
+
+- Cookie: Contém cookies enviados anteriormente pelo servidor.
+     - ex.: `Cookie: session_
