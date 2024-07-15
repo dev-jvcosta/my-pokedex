@@ -136,4 +136,41 @@ O Status Code **(código de status)** é uma resposta numérica que o servidor e
      - O servidor encontrou um erro ao processar a requisição.
 
 
+# Promise, Response, fetch(), catch() e finally
 
+### 1. O que é uma Promise (Promessa)?
+
+Imagine que você pediu uma pizza. A pizzaria te promete que vai entregar, entretanto não na mesma hora. Você recebe um "papelzinho" (a Promise) que representa essa promessa. Com este papelzinho, você pode:
+
+- **Esperar a pizza chegar `(then)`**: Quando a pizza estiver pronta, você a recebe e pode saboreá-la.
+
+- **Se prepara para problemas `(catch)`**: Se algo der errado (a pizzaria esqueceu o refrigerante, o entregador se atrasou), você tem um plano B.
+
+- **Limpar a mesa `(finally)`**: Independete se a pizza chegou ou não, você vai querer limpar a mesa depois, certo?
+
+Em JavaScript, uma **Promise** funciona da mesma forma. Ela representa a promessa de que uma operação (como uma requisição para um servidor) será concluída no futuro.
+
+### 2. O que é Response (Resposta)?
+
+**Continuando** com a analogia da pizza, a **Response** é a pizza que chega na sua casa. Ela contém tudo o que você pediu _(os dados que você solicitou ao servidor)_ e algumas informações extras, como o status da entrega _(se deu tudo certo, se houve algum problema.)_ 
+
+### 3. O que é `fetch()` e como usá-lo?
+
+`fetch()` é a função que você usa para "pedir a pizza" _(fazer uma requisição a um servidor)_. Você passa a **URL** do recurso que deseja _(por exemplo: "https://pokeapi.co/api/v2/pokemon/")_ e o `fetch()` retorna uma Promise.
+
+ ex.:
+```javascript
+fetch('https://pokeapi.co/api/v2/pokemon')
+.then(response => {
+// A "pizza" (resposta) chegou!
+// Vamos verificar se deu tudo certo:
+if (!response.ok) {
+     throw new Error('Algo deu errado na requisição!');
+}
+// Se deu certo, vamos "comer a pizza" (extrair os dados):
+return response.json(); // Converte a resposta para JSON
+})
+.then(dados => {
+// Agora temos os dados em formato JSON
+}
+```
