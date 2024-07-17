@@ -1,6 +1,8 @@
 const pokeApi = {}
 
 // FUNÇÃO PARA CONSUMIR OS DADOS DA API
+
+// offset e limit foram criadas para controle dinâmino da páginação.
 pokeApi.getPokemon = (offset = 0, limit = 10) => {
     const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 

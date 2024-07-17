@@ -1,8 +1,3 @@
-/* REALIZAR O END-POINT FAZER A REQUISIÇÃO  DA API */
-
-// offset e limit foram criadas para controle dinâmino da páginação.
-
-
 // recebe um pokemon e retorna uma li com os dados do pokemon no layout definido.
 function convertPokemonToLi(pokemon) {
     return `<li class="pokemon">
@@ -20,17 +15,15 @@ function convertPokemonToLi(pokemon) {
     </div>
   </li>`
 }
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:3950895211.
+
 const pokemonList = document.getElementById(`pokemonList`); //captura do html pelo id o elemento de lista
-const listaItems = []
-//ESTRUTURA DE INTERFACE DE UM FETCH
+const listaItems = [];
 
-
+/*
+  O código abaixo basicamente pega a lista de pokemons, realiza um map passando a referencia da função convertPokemonToLi() como parametro
+  e em seguido, o resultado retornado realiza o um join com espaço em branco entre eles.
+*/
 pokeApi.getPokemon().then((pokemons) => {
-    for (let i = 0; i < pokemons.length; i++) {
-        const pokemon = pokemons[i];
-        listaItems.push(convertPokemonToLi(pokemon));
-      }
-      console.log(listaItems);
+  pokemonList.innerHTML += pokemons.map(convertPokemonToLi).join(``);
 })
 
