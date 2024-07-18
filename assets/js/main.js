@@ -1,14 +1,16 @@
+function convertPokemonTypesToLi(pokemonTypes){
+  return pokemonTypes.map((typeSlot) => `<li class="type">${typeSlot.type.name}</li>`);
+}
+
 // recebe um pokemon e retorna uma li com os dados do pokemon no layout definido.
 function convertPokemonToLi(pokemon) {
     return `<li class="pokemon">
-    <span class="number">#${pokemon.order}</span>
+    <span class="number">#0${pokemon.order}</span>
     <span class="name">${pokemon.name}</span>
 
     <div class="detail">
-
       <ol class="types">
-        <li class="type">Grass</li>
-        <li class="type">Poison</li>
+        ${convertPokemonTypesToLi(pokemon.types).join('')}
       </ol>
 
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="${pokemon.name}">
