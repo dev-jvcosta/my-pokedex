@@ -1,7 +1,7 @@
 // recebe um pokemon e retorna uma li com os dados do pokemon no layout definido.
 function convertPokemonToLi(pokemon) {
     return `<li class="pokemon">
-    <span class="number">#001 </span>
+    <span class="number">#${pokemon.order}</span>
     <span class="name">${pokemon.name}</span>
 
     <div class="detail">
@@ -16,14 +16,14 @@ function convertPokemonToLi(pokemon) {
   </li>`
 }
 
-const pokemonList = document.getElementById(`pokemonList`); //captura do html pelo id o elemento de lista
-const listaItems = [];
+const pokemonList = document.getElementById('pokemonList'); //captura do html pelo id o elemento de lista
 
 /*
   O código abaixo basicamente pega a lista de pokemons, realiza um map passando a referencia da função convertPokemonToLi() como parametro
   e em seguido, o resultado retornado realiza o um join com espaço em branco entre eles.
 */
-pokeApi.getPokemon().then((pokemons) => {
-  pokemonList.innerHTML += pokemons.map(convertPokemonToLi).join(``);
+pokeApi.getPokemons().then((pokemons = []) => {
+  const newHtml = pokemons.map(convertPokemonToLi).join('');
+  pokemonList.innerHTML = newHtml;
 })
 
